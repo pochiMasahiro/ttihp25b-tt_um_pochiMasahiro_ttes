@@ -17,9 +17,6 @@ module tt_um_pochiMasahiro_ttes (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  assign uio_out = 0;
-  assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, ui_in[7], ui_in[6], ui_in[5], ui_in[4], ui_in[3], ui_in[2], ui_in[1], ui_in[0], uo_out[7], uo_out[6], uo_out[5], 1'b0};
