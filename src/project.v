@@ -22,7 +22,7 @@ module tt_um_pochiMasahiro_ttes (
   assign uio_oe  = 0;
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, clk, rst_n, 1'b0};
+  wire _unused = &{ena, ui_in[7], ui_in[6], ui_in[5], ui_in[4], ui_in[3], ui_in[2], ui_in[1], ui_in[0], uo_out[7], uo_out[6], uo_out[5], 1'b0};
 
   wire [3:0] d;
   assign uo_out[3:0] = d;
