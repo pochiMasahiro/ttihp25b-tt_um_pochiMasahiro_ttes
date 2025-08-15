@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_example (
+module tt_um_pochiMasahiro_ttes (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -23,5 +23,20 @@ module tt_um_example (
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
+
+  wire [3:0] d;
+  assign uo_out[3:0] = d;
+
+  reg [3:0] count;
+
+  always @(posedge clk or negedge rst_n)
+  begin
+      if (!rstt_n)
+          count <= 4'b0;
+      else
+          count <= count + 4'b1;
+  end
+
+  assign d = count;
 
 endmodule
