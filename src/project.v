@@ -31,7 +31,7 @@ module tt_um_pochiMasahiro_ttes (
 
   always @(posedge clk or negedge rst_n)
   begin
-      if (!rstt_n)
+      if (!rst_n)
           count <= 4'b0;
       else
           count <= count + 4'b1;
